@@ -1,12 +1,13 @@
 package main
 
-import "simple-blockchain/core"
+import (
+	"simple-blockchain/core"
+)
 
 func main() {
 	bc := core.NewBlockchain()
+	defer bc.DB.Close()
 
-	bc.AddBlock("Send 1 BTC To Alice")
-	bc.AddBlock("Send 2 BTC To Bob")
-
-	bc.SearchBlock(0, 100)
+	cli := CLI{bc}
+	cli.Run()
 }
