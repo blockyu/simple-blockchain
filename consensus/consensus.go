@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	TARGET_BITS = 10
+	TARGET_BITS = 1
 	MAX_NONCE   = math.MaxInt64
 )
 
